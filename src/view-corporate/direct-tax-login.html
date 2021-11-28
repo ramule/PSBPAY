@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta charset="UTF-8" />
+    <title>Login | Direct Tax</title>
+    <link href="../css/lib/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/lib/owl.carousel.min.css" rel="stylesheet" />
+    <link href="../css/lib/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../css/lib/datatables.min.css" rel="stylesheet" />
+    <link href="../css/lib/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="prelogin-page login-page direct-tax-login">
+
+        <!-- header section Start -->
+        <header class="global-header">
+            <div class="desk-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-2 d-none d-md-block d-lg-block d-xl-block">
+                            <ul class="headerlist">
+                                <li>
+                                    <a href="#"> <img src="../assets/images/svg/home1.svg" alt="home-icon"> <em>Home</em></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="brand-heading text-center m-auto">
+                                <span class="logo-img2">
+                                    <img src="../assets/images/svg/final-logo.svg" alt="psb-logo">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-2 col-2 d-none d-md-block d-lg-block d-xl-block">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header section End -->
+
+        <div class="full-container  halfBackground forLogin">
+            <div class="login-container">
+                <div class="central-box">
+
+
+                    <!-- Loginform Container Start -->
+
+                    <div class="loginform-container">
+                        <div class="login-form">
+                            <div class="login-heading">
+                                <div class="row1">
+                                    <div class="col-12">
+                                        <div class="ux-selection">
+                                            <label class="ux-selection2">Retail Banking
+                                                <input type="radio" value="retaile-banking" checked name="login-type" />
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="ux-selection">
+                                            <label class="ux-selection2">Corporate Banking
+                                                <input type="radio" value="corporate-banking" name="login-type" />
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="ux-input">
+                                            <p class="error-message"></p>
+                                        </div>
+                                    </div>
+                                </div>
+ 
+
+                                <!-- <h3>Login</h3>
+                                <h5>Please login to your Retail banking account</h5> -->
+                            </div>
+
+                            <div class="vspacer20"></div>
+
+                            <div id="retail-info">
+                                <div class="login-heading">
+                                     <h3>Login</h3>
+                                     <h5>Please login to your Retail Banking</h5>
+                                </div>
+                                <div class="row1 mt-3">
+                                    <div class="col-12">
+                                        <form action="#" method="#">
+                                            <div class="row1">
+                                                <div class="col-12">
+                                                    <div class="ux-input">
+                                                        <label>Username</label>
+                                                        <input type="text" placeholder="Enter Username" required />
+                                                        <a href="#" class="show-keyboard"></a>
+                                                        <p class="error-message"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-12">
+                                                    <div class="text-right">
+                                                        <a href="javascript:;" class="check-availability reg-txt">Forgot Username?</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="ux-input">
+                                                        <label>Password</label>
+                                                        <input type="password" placeholder="Enter Password" required />
+                                                        <a href="#" class="show-keyboard"></a>
+                                                        <p class="error-message"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-12">
+                                                    <div class="text-right">
+                                                        <!-- <a href="javascript:;"  data-toggle="modal" data-target="#usernamePolicy" class="reg-txt">{{'USERNAME_POLICY' |translate}}</a> -->
+                                                        <a href="javascript:;" class="check-availability reg-txt">Forgot Password?</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="ux-input">
+                                                        <label>Enter the text as shown in the image</label>
+                                                        <input type="password" placeholder="Enter Captcha" required />
+                                                        <p></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="ux-selection">
+                                                        <label class="ux-selection2"> Image Captcha
+                                                            <input type="radio" checked="checked" value="image-captcha" name="captcha-type" />
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="ux-selection">
+                                                        <label class="ux-selection2"> Audio Captcha
+                                                            <input type="radio" value="audio-captcha" name="captcha-type" />
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="ux-input">
+                                                        <p class="error-message"></p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="vspacer20"></div>
+
+                                                <div class="col-12">
+                                                    <div class="captcha-container">
+                                                        <div class="captcha-box"></div>
+                                                        <div class="refresh-btn">
+                                                            <img src="../assets/images/svg/refresh-g.svg" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="vspacer20"></div>
+
+                                            <div class="row1">
+                                                <div class="col-6 col-md-6 text-center">
+                                                    <button onclick="window.location.href='#'" role="button" class="ux-button secondary ">Cancel Payment</button>
+                                                </div>
+                                                <div class="col-6 col-md-6 text-center">
+                                                    <button onclick="window.location.href='direct-tax-payment-history.html'" role="button" class="ux-button primary ">Login</button>
+                                                </div>
+                                            </div>
+                                            <div class="row1">
+                                                <div class="col-12">
+                                                    <div class="secure-img ">
+                                                        <img src="../assets/images/icons/secure.png" alt="secure-img" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="tax-wrapper">
+                                                        <ol class="order-list">
+                                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</li>
+                                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</li>
+                                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="corporate-info" style="display:none;">
+                                <div class="login-heading">
+                                    <h3>Login</h3>
+                                    <h5>Please login to your Corporate Banking</h5>
+                               </div>
+                                <div class="row1 mt-3">
+                                    <div class="col-12">
+                                        <form action="#" method="#">
+                                            <div class="row1">
+                                                <div class="col-12">
+                                                    <div class="ux-input">
+                                                        <label>Corporate ID</label>
+                                                        <input type="text" placeholder="Enter Corporate ID" required />
+                                                        <a href="#" class="show-keyboard"></a>
+                                                        <p class="error-message"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="ux-input">
+                                                        <label>User ID</label>
+                                                        <input type="text" placeholder="Enter User ID" required />
+                                                        <a href="#" class="show-keyboard"></a>
+                                                        <p class="error-message"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-12">
+                                                    <div class="text-right">
+                                                        <a href="javascript:;" class="check-availability reg-txt">Forgot User ID?</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="ux-input">
+                                                        <label>Password</label>
+                                                        <input type="password" placeholder="Enter Password" required />
+                                                        <a href="#" class="show-keyboard"></a>
+                                                        <p class="error-message"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-12">
+                                                    <div class="text-right">
+                                                        <!-- <a href="javascript:;"  data-toggle="modal" data-target="#usernamePolicy" class="reg-txt">{{'USERNAME_POLICY' |translate}}</a> -->
+                                                        <a href="javascript:;" class="check-availability reg-txt">Forgot Password?</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="ux-input">
+                                                        <label>Enter the text as shown in the image</label>
+                                                        <input type="password" placeholder="Enter Captcha" required />
+                                                        <p class="error-message"></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="ux-selection">
+                                                        <label class="ux-selection2"> Image Captcha
+                                                            <input type="radio" checked="checked" value="image-captcha" name="captcha-type" />
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="ux-selection">
+                                                        <label class="ux-selection2"> Audio Captcha
+                                                            <input type="radio" value="audio-captcha" name="captcha-type" />
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="ux-input">
+                                                        <p class="error-message"></p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="vspacer20"></div>
+
+                                                <div class="col-12">
+                                                    <div class="captcha-container">
+                                                        <div class="captcha-box"></div>
+                                                        <div class="refresh-btn">
+                                                            <img src="../assets/images/svg/refresh-g.svg" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="vspacer20"></div>
+
+                                            <div class="row1">
+                                                <div class="col-6 col-md-6 text-center">
+                                                    <button onclick="window.location.href='#'" role="button" class="ux-button secondary ">Cancel Payment</button>
+                                                </div>
+                                                <div class="col-6 col-md-6 text-center">
+                                                    <button onclick="window.location.href='direct-tax-payment-history.html'" role="button" class="ux-button primary ">Login</button>
+                                                </div>
+                                            </div>
+                                            <div class="row1">
+                                                <div class="col-12">
+                                                    <div class="secure-img ">
+                                                        <img src="../assets/images/icons/secure.png" alt="secure-img" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="tax-wrapper">
+                                                        <ol class="order-list">
+                                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</li>
+                                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</li>
+                                                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Loginform Container End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .full-container -->
+
+        <!-- Footer Code Starts Here -->
+        <footer>
+            <div class="global-footer full-footer">
+                <div class="in-glfooter">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-4 col-xl-6 col-lg-6 col-md-6 col-sm-4">
+                                <div class="glfooter-content">
+                                    <div class="glfooter-box">
+                                        <div class="glcopyright-text"><em>Powered by</em> <img src="../assets/images/kiya-logo.png" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-8 col-xl-6 col-lg-6 col-md-6 col-sm-8">
+                                <div class="glfooter-content">
+                                    <div class="glfooter-box">
+                                        <div class="glcopyright-text1">
+                                            <em>Copyright © 2020 Infrasoft Technologies Ltd. All rights reserved.</em>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Code Ends -->
+    </div>
+
+
+    <!-- .prelogin-page -->
+    <div id="importantNotice" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="mh-bottom">
+                        <div class="row1">
+                            <div class="col-10">
+                                <h6>Important Notice</h6>
+                            </div>
+                            <div class="col-2">
+                                <a href="javascript:;" data-dismiss="modal"><span class="mh-cross"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</p>
+                    <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</p>
+                    <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</p>
+                    <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</p>
+                    <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</p>
+                    <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script src="../js/lib/jquery-ui.min.js"></script>
+    <script src="../js/lib/owl.carousel.min.js"></script>
+    <script src="../js/lib/popper.min.js"></script>
+    <script src="../js/lib/jquery.mousewheel.min.js"></script>
+    <script src="../js/lib/jquery.mCustomScrollbar.js"></script>
+    <script src="../js/lib/datatables.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/lib/chart2.min.js"></script>
+
+
+    <script>
+        $('input[name=login-type]').change(function() {
+            // console.log('Its working');
+            if ($(this).val() == "retail-banking") {
+                $('#retail-info').show();
+                $('#corporate-info').hide();
+            } else if ($(this).val() == "corporate-banking") {
+                $('#corporate-info').show();
+                $('#retail-info').hide();
+            } else {
+                $('#retail-info').show();
+                $('#corporate-info').hide();
+            }
+        });
+
+
+
+        $('a.show-keyboard').click(function() {
+            //  alert("Hello! I am an alert box!!");
+            $('.keyboard-section').toggleClass("show");
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,268 @@
+<div class="bg-m prelogin-page login-page direct-tax-login main">
+	<div class="right-main-column m-0">
+		<div class="right-col-container pad-b full-width">
+			<div class="body-page-container main-dashborad manage-payee">
+				<div class="container-fluid">
+					<div class="row m-0">
+						<div class="col-12">
+							<div class="row1">
+								<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-0">
+									<!-- Greencard2 Start here -->
+									<div class="greencard2">
+										<div class="col-xl-10 col-md-12 col-12 m-auto">
+											<div class="row1 hide-m">
+												<div class="col-md-8 col-12">
+													<h4>Direct Tax Payment</h4> </div>
+												<div class="col-md-4 col-12"> </div>
+											</div>
+											<div class="row1">
+												<div class="col-sm-12 col-12 col-md-12">
+													<!-- dark green menu headers start -->
+													<div class="flex-container py-2">
+														<div class="full-info">
+															<div class="ac-info">
+																<div class="greenbg-input ux-input">
+																	<label for="fromaccount">From Account</label>
+																</div>
+															</div>
+															<div class="ac-info" (click)="onAccountSelectType()">
+																<div class="greenbg-input ux-input">
+																	<select required="" class="hide-m">
+																		<option value="select">Select</option>
+                                                                        <option [value]="account.accoutType" *ngFor="let account of accountList">{{account.accoutType}} {{account.accountNo}} </option>
+																		<!-- <option value="saving">Saving Account XXX XXX 9897 </option>
+																		<option value="saving">Saving Account XXX XXX 9897</option> -->
+																	</select>
+																	<div class="custom-selectbox"> 
+                                                                        <span *ngIf="accountValue == '' ">Select Account </span> 
+                                                                        <span *ngIf="accountValue != '' ">{{accountValue}}</span> 
+                                                                         <span class="right-arrow"></span> </div>
+																	<p class="error-message"></p>
+																</div>
+															</div>
+															<div class="ac-info">
+																<div class="greenbg-input ux-input">
+																	<p class="info-message2"><i class="hide-d">Total Available Balance</i> <span>₹ 25,000.00</span></p>
+																</div>
+															</div>
+															<div class="ac-info hide-m">
+																<button class="refresh-btn"><img src="assets/images/svg/refresh.svg" alt="refresh-icon"></button> <span class="refresh-text"> Last refreshed on 12th Oct 2020, 21:22</span> </div>
+														</div>
+													</div>
+													<div class="vspacer10 d-block d-sm-none"></div>
+													<!-- dark green menu headers end -->
+												</div>
+												<div class="col-12 col-md-12">
+                                                    <form [formGroup]="directTaxPaymentForm">
+													<div class="row1">
+														<div class="col-sm-12 col-12 col-md-12">
+															<div class="widget-box5 mb-3">
+																<div class="bg-white1 pad-custom">
+																	<div class="row1">
+																		<div class="col-md-12 col-12">
+																			<div class="row1">
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>Major Head</label>
+																						<input type="text" placeholder="" disabled value="(0020)Income tax on Companies(Corparative)">
+                                                                                        <p class="error-message"></p>
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>Minor Head</label>
+																						<input type="text" placeholder="" disabled value="(106) Tax on Distributed Profits">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>Nature of Payment</label>
+																						<input type="text" placeholder="" disabled value="94A-Interest other than interest securities">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="row1">
+																		<div class="col-md-12 col-12">
+																			<div class="row1">
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input">
+																						<label>Tax</label>
+																						<input type="text" placeholder="Enter Tax" value="₹ 110.00" formControlName="tax">
+                                                                                        <p class="error-message" *ngIf="directTaxPaymentForm.controls['tax'].hasError('required') && (directTaxPaymentForm.controls['tax'].dirty || directTaxPaymentForm.controls['tax'].touched)"> This field is required </p>
+
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input">
+																						<label>Surcharge</label>
+																						<input type="text" placeholder="Enter Surcharge" value="₹ 110.00" formControlName="surcharge">
+                                                                                        <p class="error-message" *ngIf="directTaxPaymentForm.controls['surcharge'].hasError('required') && (directTaxPaymentForm.controls['surcharge'].dirty || directTaxPaymentForm.controls['surcharge'].touched)"> This field is required </p>
+
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input">
+																						<label>Education cess</label>
+																						<input type="text" placeholder="Enter Education cess" value="₹ 110.00" formControlName="educationCess">
+                                                                                        <p class="error-message" *ngIf="directTaxPaymentForm.controls['educationCess'].hasError('required') && (directTaxPaymentForm.controls['educationCess'].dirty || directTaxPaymentForm.controls['educationCess'].touched)"> This field is required </p>
+
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="row1">
+																		<div class="col-md-12 col-12">
+																			<div class="row1">
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input">
+																						<label>Interest</label>
+																						<input type="text" placeholder="Enter Interest" value="₹ 110.00" formControlName="interest">
+                                                                                        <p class="error-message" *ngIf="directTaxPaymentForm.controls['interest'].hasError('required') && (directTaxPaymentForm.controls['interest'].dirty || directTaxPaymentForm.controls['interest'].touched)"> This field is required </p>
+
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input">
+																						<label>Penalty </label>
+																						<input type="text" placeholder="Enter Penalty" value="₹ 110.00" formControlName="penalty">
+                                                                                        <p class="error-message" *ngIf="directTaxPaymentForm.controls['penalty'].hasError('required') && (directTaxPaymentForm.controls['penalty'].dirty || directTaxPaymentForm.controls['penalty'].touched)"> This field is required </p>
+
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input">
+																						<label>Other</label>
+																						<input type="text"  placeholder="Enter Other" value="₹ 110.00" formControlName="other">
+                                                                                        <p class="error-message" *ngIf="directTaxPaymentForm.controls['other'].hasError('required') && (directTaxPaymentForm.controls['other'].dirty || directTaxPaymentForm.controls['other'].touched)"> This field is required </p>
+
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="row1">
+																		<div class="col-md-12 col-12">
+																			<div class="row1">
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12 ">
+																					<div class="ux-input ">
+																						<label>Total Amount</label>
+																						<input type="text" placeholder="Enter Total Amount" value="₹ 110.00" formControlName="totalAmount">
+																						<p class="info-message">Six Hundred Fifty Rupees Only</p>
+                                                                                        <p class="error-message" *ngIf="directTaxPaymentForm.controls['totalAmount'].hasError('required') && (directTaxPaymentForm.controls['totalAmount'].dirty || directTaxPaymentForm.controls['totalAmount'].touched)"> This field is required </p>
+
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input">
+																						<label>Remarks</label>
+																						<input type="text" placeholder="Enter Remark" value="Tax Payment" formControlName="payment">
+                                                                                        <p class="error-message" *ngIf="directTaxPaymentForm.controls['payment'].hasError('required') && (directTaxPaymentForm.controls['payment'].dirty || directTaxPaymentForm.controls['payment'].touched)"> This field is required </p>
+
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input">
+																						<label>Date</label>
+																						<input type="text" class="datepicker1" placeholder="Enter Date" formControlName="datepicker1"> <em class=" calendar-ic cal-top"></em>
+                                                                                        <!-- <input type="text" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="DD/MM/YYYY"  formControlName="datepicker1" >
+                                                                                        <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                                                                                        <em class=" calendar-ic cal-top"></em> -->
+                                                                                        <p class="error-message" *ngIf="directTaxPaymentForm.controls['datepicker1'].hasError('required') && (directTaxPaymentForm.controls['datepicker1'].dirty || directTaxPaymentForm.controls['datepicker1'].touched)"> This field is required </p>
+
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-12">
+															<ul class="bottom-footer1">
+																<li>
+																	<div class="btn-div">
+																		<button class=" ux-button secondary sm-mob">Cancel</button>
+																	</div>
+																	<div class="btn-div">
+																		<button class=" ux-button primary sm-mob" (click)="directTaxPaymentSubmit()">Proceed</button>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+                                                </form>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Greencard2 End here -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--.right-col-container-->
+	</div>
+	<!--.right-main-column-->
+</div>
+<!-- main -->
+
+
+   <!-- Select Accounts Popup Start-->
+
+   <div class="popup-bottom sel-account">
+    <div class="row1">
+        <div class="col-10">
+            <h4>Select From Account</h4>
+        </div>
+        <div class="col-2">
+            <button class="ux-button-icon close-btn"  (click)="closePopup()">
+                <img src="assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall">
+            </button>
+        </div>
+    </div>
+    <div class="row1">
+        <div class="col-12">
+            <div class="row1">
+                <div class="col-12 col-md-12" *ngFor="let account of accountList; let i = index" (click)="getToAccValue(account.accoutType,account.accountNo )">
+                    <div class="ux-selection mar-custom">
+                        <label class="ux-selection2">{{account.accoutType}} : {{account.accountNo}}
+                            <input type="radio"  [value]="account.accountNo" name="upi-account"> <span class="checkmark"></span> 
+                        </label>
+                    </div>
+                </div>
+                <!-- <div class="col-12 col-md-12">
+                    <div class="ux-selection mar-custom">
+                        <label class="ux-selection2">Saving Account: XXXX XXX 968
+                            <input type="radio" value=" XXXX XXX 968" name="upi-account">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12">
+                    <div class="ux-selection mar-custom">
+                        <label class="ux-selection2">Saving Account: XXXX XXX 969
+                            <input type="radio" value=" XXXX XXX 969" name="upi-account">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-12 text-center">
+            <button class="ux-button primary submit-btn2" (click)="closePopup()" >Submit</button>
+        </div>
+    </div>
+</div>
+
+<!-- Select Accounts Popup End-->

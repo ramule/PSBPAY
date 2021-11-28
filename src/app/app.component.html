@@ -1,0 +1,33 @@
+<div class="main">
+	 <app-header></app-header>
+	<app-footer></app-footer>
+	<div class="ios-nav-overlay"></div>
+	<div id="pageLoader" class="loading-backdrop" style="display:none;"><img src="assets/images/loader/pageloader.gif">
+    </div>
+	<router-outlet></router-outlet>
+</div>
+
+
+<!-- logout Modal Starts-->
+<div id="logoutModal" class="modal fade " role="dialog">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="mh-bottom">
+					<div class="row1">
+						<div class="col-10">
+							<h6>Confirmation</h6> </div>
+						<div class="col-2"><a href="javascript:;" data-dismiss="modal"><span class="mh-cross"></span></a></div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-body">
+				<p>Do you want logout from this application?</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="ux-button sm secondary" data-dismiss="modal">No</button>
+				<button type="button" class="ux-button sm primary">Yes</button>
+			</div>
+		</div>
+	</div>
+</div>

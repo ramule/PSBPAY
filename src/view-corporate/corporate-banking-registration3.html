@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta charset="UTF-8">
+
+    <title>Corporate Banking Registration</title>
+
+    <link href="../css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/lib/owl.carousel.min.css" rel="stylesheet">
+    <link href="../css/lib/jquery-ui.min.css" rel="stylesheet">
+    <link href="../css/lib/datatables.min.css" rel="stylesheet">
+    <link href="../css/lib/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="ios-nav-overlay"></div>
+
+    <div class="prelogin-page">
+
+        <!-- header section Start -->
+
+        <header class="global-header">
+            <div class="desk-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-2 d-none d-md-block d-lg-block d-xl-block">
+                            <ul class="headerlist">
+                                <li>
+                                    <a href="#"> <img src="../assets/images/svg/home1.svg" alt="home-icon"> <em>Home</em></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="brand-heading text-center m-auto">
+                              <span class="logo-img2">
+                                <img src="../assets/images/svg/final-logo.svg" alt="psb-logo">
+                            </span>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-2 col-2 d-none d-md-block d-lg-block d-xl-block">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>  
+
+        <!-- header section End -->
+
+
+        <div class="registration-steps ">
+            <div class="row1">
+                <div class="col-12 position-static">
+                  <div class="inner-header">
+                        <div class="registration-container">
+                            <h4>Corporate Banking Registration</h4>
+                             <a class="close-registration">
+                              <img (click)="mobPrevclick('cross')" src="../assets/images/svg/close-w.svg">
+                           </a>
+                        </div>
+                    </div>
+
+                    <div class="registrationsteps-block custom-pad registration-container">
+                        <div class="row1">
+                            <div class="background-block" style="background-image: url(../assets/images/banner/registration-banner3.png);"> </div>
+                            <div class="middle-block">
+                                <div class="pageHeader">
+                                    <h4>Corporate Details</h4>
+                                    <h6>Please enter your corporate details</h6>
+                                </div>
+                               <div class="row1">
+                                    <div class="col-12 col-md-12 col-xl-12 col-lg-12">
+                                    <div class="ux-input">
+                                        <label for="corporateId">Corporate ID</label>
+                                        <input type="text" name="corporateId" placeholder="Enter Corporate ID">
+                                        <p class="text-right"> <a class="link-txt" href="#">Check Availability</a></p>
+                                        <p class="error-message"> </p>
+                                     </div>
+                                </div>
+                                <div class="col-12 col-md-12 col-xl-12 col-lg-12">
+                                    <div class="ux-input file-upload mb-0">
+                                        <label for="profilePhoto">Profile Photo</label>
+                                            <div class="custom-file  mt-2 mb-2">
+                                                 <input type="file" class="custom-file-input" id="customFile">
+                                                  <label class="custom-file-label" for="customFile">Upload Profile Photo</label> 
+                                              </div>
+                                      </div>
+                               </div>
+                               <div class="col-12 col-md-12 col-xl-12 col-lg-12">
+                                   <div class="row1">
+                                       <div class="col-9 col-md-8">
+                                           <div class="ux-input mt-0 mb-0">
+                                             <p class="info-message text-left"> Upload JPG, JPEG, PNG file (maximum 500kb)</p>
+                                             </div>
+                                        </div>
+                                       <div class="col-3 col-md-4">
+                                          <div class="ux-input mt-0 mb-0">
+                                             <p class="info-message text-right">Optional</p>
+                                         </div>
+                                       </div>
+                                   </div>
+                                   <div class="row1">
+                                    <div class="col-12 col-md-8">
+                                        <div class="ux-input">
+                                            <p class="error-message"> </p>
+                                      </div>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                            <div class="row1 mt-3">
+                                <div class="col-7 col-md-7 col-xl-7 col-lg-7">
+                                   <div class="ux-input">
+                                       <h6>Primary Account</h6>
+                                       <h5>087XXXX8873</h5>
+                                    </div>
+                               </div>
+                               <div class="col-5 col-md-5 col-xl-5 col-lg-5">
+                                <div class="ux-input mt-4 more-accounts-link">
+                                      <p class="text-right"> <a class="more-accounts-btn link-txt" href="#">+ More Accounts(s)</a></p>
+                                  </div>
+                                </div>
+                             </div>
+                             <div>
+                                 <div class="link-details mt-2">
+                                        <div class="row1">
+                                            <div class="col-12 col-md-12 ">
+                                               <div class="ux-input">
+                                                    <h6>You have linked</h6>
+                                                </div>
+                                           </div>
+                                         </div>
+                                     <div class="lightgreen-bg">
+                                        <div class="row1">
+                                            <div class="col-7 col-md-7 col-xl-7 col-lg-7">
+                                               <div class="ux-input">
+                                                    <h5>5 Accounts</h5>
+                                                </div>
+                                           </div>
+                                           <div class="col-5 col-md-5 col-xl-5 col-lg-5">
+                                            <div class="ux-input">
+                                                  <p class="text-right"> <a class="modify-btn link-txt" href="#">Modify</a></p>
+                                              </div>
+                                            </div>
+                                         </div>
+                                    </div>
+                                 </div>
+                             </div>
+                             
+                             <div class="row1">
+                                <div class="col-12 position-static">
+                                    <div class="text-center button-block">
+                                        <button class="email-btn ux-button primary" onclick="window.location.href ='corporate-banking-registration4.html'">Proceed</button>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+<!-- Footer Code Starts -->
+        <footer>
+          <div class="global-footer full-footer">
+              <div class="in-glfooter">
+                  <div class="container-fluid">
+                      <div class="row">
+                          <div class="col-4 col-xl-6 col-lg-6 col-md-6 col-sm-4">
+                              <div class="glfooter-content">
+                                  <div class="glfooter-box">
+                                      <div class="glcopyright-text">
+                                          <em>Powered by</em> <img src="../assets/images/kiya-logo.png">
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-8 col-xl-6 col-lg-6 col-md-6 col-sm-8">
+                              <div class="glfooter-content">
+                                  <div class="glfooter-box">
+                                      <div class="glcopyright-text1">
+                                          <em>Copyright © 2020 Infrasoft Technologies Ltd. All rights reserved.</em>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </footer>
+<!-- Footer Code Ends -->
+  
+    </div>
+    <!-- .prelogin-page -->
+
+
+
+    <!-- Link Accounts Popup Start -->
+
+    <div class="popup-bottom lg-popup link-accounts-popup">
+      <div class="row1">
+        <div class="col-10">
+            <h4 class="text-left">Accounts to Link</h4>
+        </div>
+        <div class="col-2">
+            <button class="ux-button-icon close-btn">
+                <img src="../assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall">
+            </button>
+        </div>
+    </div>
+      <div class="row1">
+          <div class="col-12 col-md-10 col-lg-10 col-xl-10 m-auto">
+              <div class="grid-list-section">
+                <ul class="link-grid-list">
+                    <li class="grey-th">
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <div class="left-info">
+                                    <div class="ux-selection ac-info">
+                                        <label class="ux-selection1"> 
+                                            <input type="checkbox" name="link-account-detail">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div> 
+                                    <h6>Account Number</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h6>Account Name</h6>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                  <h6 class="hide-m">Branch Name</h6>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                  <h6 class="hide-m">IFSC</h6>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                         <div class="grid-info">
+                            <div class="full-info">
+                                <div class="left-info">
+                                    <div class="ux-selection ac-info">
+                                        <label class="ux-selection1"> 
+                                            <input type="checkbox" name="link-account-detail1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div> 
+                                    <h5>087343586873</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>Prasad Patil</h5>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>Andheri</h5>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>PSB00093</h5>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                         <div class="grid-info">
+                            <div class="full-info">
+                                <div class="left-info">
+                                    <div class="ux-selection ac-info">
+                                        <label class="ux-selection1"> 
+                                            <input type="checkbox" name="link-account-detail2">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div> 
+                                    <h5>087343586873</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>Prasad Patil</h5>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>Andheri</h5>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>PSB00093</h5>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                         <div class="grid-info">
+                            <div class="full-info">
+                                <div class="left-info">
+                                    <div class="ux-selection ac-info">
+                                        <label class="ux-selection1"> 
+                                            <input type="checkbox" name="link-account-detail3">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div> 
+                                    <h5>087343586873</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>Prasad Patil</h5>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>Andheri</h5>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>PSB00093</h5>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <div class="left-info">
+                                    <div class="ux-selection ac-info">
+                                        <label class="ux-selection1"> 
+                                            <input type="checkbox" name="link-account-detail4">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div> 
+                                    <h5>087343586873</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>Prasad Patil</h5>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>Andheri</h5>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>PSB00093</h5>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                         <div class="grid-info">
+                            <div class="full-info">
+                                <div class="left-info">
+                                    <div class="ux-selection ac-info">
+                                        <label class="ux-selection1"> 
+                                            <input type="checkbox" name="link-account-detail5">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div> 
+                                    <h5>087343586873</h5>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>Prasad Patil</h5>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>Andheri</h5>
+                            </div>
+                        </div>
+                        <div class="grid-info">
+                            <div class="full-info">
+                                <h5>PSB00093</h5>
+                            </div>
+                        </div>
+                    </li>
+                 </ul>
+              </div> 
+          </div>
+      </div>
+ 
+      <div class="row1 mt-2">
+          <div class="col-12 col-md-8 col-lg-8 col-xl-8  m-auto">
+              <div class="row1">
+                 <div class="col-12 text-center">
+                      <button class="ux-button primary link-submit" onclick="">Link Accounts</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Link Accounts Popup Start -->
+
+  <script src="../js/lib/jquery.min.js"></script>
+  <script src="../js/lib/bootstrap.min.js"></script>
+  <script src="../js/lib/jquery-ui.min.js"></script>
+  <script src="../js/lib/owl.carousel.min.js"></script>
+  <script src="../js/lib/popper.min.js"></script>
+  <script src="../js/lib/jquery.mousewheel.min.js"></script>
+  <script src="../js/lib/jquery.mCustomScrollbar.js"></script>
+  <script src="../js/lib/datatables.min.js"></script>
+  <script src="../js/common.js"></script>
+
+    <script>
+        
+        $('body').on('click', 'a.more-accounts-btn', function() {
+            console.log('working!')
+            if (!$('div.popup-bottom.link-accounts-popup').hasClass('popup-active')) {
+                $('div.popup-bottom.link-accounts-popup').addClass('popup-active');
+                $('div.ios-nav-overlay').fadeIn(400);
+            } else {
+                $('div.popup-bottom.link-accounts-popup').removeClass('popup-active');
+                $('div.ios-nav-overlay').fadeOut(400);
+            }
+        });
+
+        $('body').on('click', 'a.modify-btn', function() {
+            console.log('working!')
+            if (!$('div.popup-bottom.link-accounts-popup').hasClass('popup-active')) {
+                $('div.popup-bottom.link-accounts-popup').addClass('popup-active');
+                $('div.ios-nav-overlay').fadeIn(400);
+            } else {
+                $('div.popup-bottom.link-accounts-popup').removeClass('popup-active');
+                $('div.ios-nav-overlay').fadeOut(400);
+            }
+        });
+
+        $('body').on('click', 'button.close-btn', function() {
+            $('div.popup-bottom.link-accounts-popup').removeClass('popup-active');
+            $('div.ios-nav-overlay').fadeOut(400);
+        });
+
+
+        $('body').on('click', 'button.link-submit', function() {
+            $('div.link-details').show();
+            $('div.more-accounts-link').hide();
+            $('div.popup-bottom.link-accounts-popup').removeClass('popup-active');
+            $('div.ios-nav-overlay').fadeOut(400);
+         });
+
+        $(document).on('change', '.custom-file-input' , function(e){
+		  //e.stopPropagation();
+		  var fileName = $(this).val().split("\\").pop();
+		  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+		 });
+
+    </script>
+
+</body>
+
+</html>

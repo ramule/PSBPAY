@@ -1,0 +1,132 @@
+<div class="main bg-m prelogin-page login-page direct-tax-login">
+	<div class="right-main-column m-0 pb-80">
+		<div class="right-col-container pad-b full-width">
+			<!-- ======== body page content start from here ======== -->
+			<div class="body-page-container main-dashborad manage-payee">
+				<div class="container-fluid">
+					<div class="row m-0">
+						<div class="col-12">
+							<div class="row1">
+								<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-0">
+									<!-- Greencard2 Start here -->
+									<div class="greencard2">
+										<div class="col-xl-10 col-md-12  col-12 m-auto">
+											<div class="row1 hide-m">
+												<div class="col-md-8 col-12">
+													<h4>Payment Overview</h4> </div>
+												<div class="col-md-4 col-12"> </div>
+											</div>
+											<div class="row1">
+												<div class="col-sm-12 col-12 col-md-12">
+													<div class="mar-t result-container1">
+														<!-- <div class="white-box2 mar-t pad-custom custom-bor"> -->
+														<div class="info-bottom pad-custom pad-custom-setting">
+															<div class="info-details">
+																<div class="row">
+																	<h6>IGST Amount</h6>
+																	<h5>₹ {{overviewObject.igst_amt ? overviewObject.igst_amt : '-'}}</h5> </div>
+															</div>
+															<div class="info-details">
+																<div class="row">
+																	<h6>Cess amount</h6>
+																	<h5>₹ {{overviewObject.cess_amt ? overviewObject.cess_amt : '-'}}</h5> </div>
+															</div>
+															<div class="info-details">
+																<div class="row">
+																	<h6>CGST Account Code</h6>
+																	<h5>₹ {{overviewObject.cess_acc_code ? overviewObject.cess_acc_code : '-'}}</h5> </div>
+															</div>
+															<div class="info-details">
+																<div class="row">
+																	<h6>SGST Account Code</h6>
+																	<h5>{{overviewObject.sgst_acc_code ? overviewObject.sgst_acc_code : '-'}}</h5> </div>
+															</div>
+															<div class="info-details">
+																<div class="row">
+																	<h6>Challan Expiry Date</h6>
+																	<h5>{{overviewObject.chln_exp_dt ? overviewObject.chln_exp_dt : '-'}}</h5> </div>
+															</div>
+															<div class="info-details">
+																<div class="row">
+																	<h6>SGST Amount</h6>
+																	<h5>₹ {{overviewObject.sgst_amt ? overviewObject.sgst_amt : '-'}}</h5> </div>
+															</div>
+															<div class="info-details">
+																<div class="row">
+																	<h6>GSTIN</h6>
+																	<h5>{{overviewObject.gstin ? overviewObject.gstin : '-'}}</h5> </div>
+															</div>
+															<div class="info-details">
+																<div class="row">
+																	<h6>CGST Amount</h6>
+																	<h5>₹ {{overviewObject.cgst_amt ? overviewObject.cgst_amt : '-'}}</h5> </div>
+															</div>
+                              <div class="info-details">
+																<div class="row">
+																	<h6>Total Amount</h6>
+																	<h5>₹ {{overviewObject.total_amt ? overviewObject.total_amt : '-'}}</h5> </div>
+															</div>
+                              <div class="info-details">
+																<div class="row">
+																	<h6>Cess Account Code</h6>
+																	<h5>{{overviewObject.cess_acc_code ? overviewObject.cess_acc_code : '-'}}</h5> </div>
+															</div>
+                              <div class="info-details">
+																<div class="row">
+																	<h6>Transaction Id</h6>
+																	<h5>{{overviewObject.txnid ? overviewObject.txnid : '-'}}</h5> </div>
+															</div>
+															<div class="info-details">
+																<div class="row">
+																	<h6>IGST Account Code</h6>
+																	<h5>{{overviewObject.igst_acc_code ? overviewObject.igst_acc_code : '-'}}</h5> </div>
+															</div>
+                              <div class="info-details">
+																<div class="row">
+																	<h6>CPIN</h6>
+																	<h5>{{overviewObject.cpin ? overviewObject.cpin : '-'}}</h5> </div>
+															</div>
+															<div class="info-details">
+																<div class="row">
+																	<h6>Payment Date</h6>
+																	<h5>{{overviewObject.request_tim ? overviewObject.request_tim : '-'}}</h5> </div>
+															</div>
+                              <div class="info-details">
+																<div class="row">
+																	<h6>Debit Account</h6>
+																	<h5>{{DataService.gstnSelectedAccount}}</h5> </div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-12 col-md-12">
+													<div class="row1">
+														<div class="col-md-12 col-lg-12 col-12">
+															<ul class="bottom-footer1">
+																<li>
+																	<div class="btn-div">
+																		<button class="ux-button secondary sm-mob" (click)="onBackClick()">Back</button>
+																	</div>
+																	<div class="btn-div">
+																		<button class="ux-button primary sm-mob" (click)="goToPage('gstnPaymentAuth')">Confirm</button>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Greencard2 End here -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--.right-col-container-->
+	</div>
+	<!--.right-main-column-->
+</div>

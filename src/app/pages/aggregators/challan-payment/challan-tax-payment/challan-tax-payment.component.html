@@ -1,0 +1,388 @@
+<div class="main bg-m prelogin-page login-page direct-tax-login">
+	<div class="right-main-column m-0 pb-80">
+		<div class="right-col-container pad-b full-width">
+			<!-- ======== body page content start from here ======== -->
+			<div class="body-page-container main-dashborad manage-payee">
+				<div class="container-fluid">
+					<div class="row m-0">
+						<div class="col-12">
+							<div class="row1">
+								<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-0">
+									<!-- Greencard2 Start here -->
+									<div class="greencard2">
+										<div class="col-xl-10 col-md-12 col-12 m-auto">
+											<div class="row1 hide-m">
+												<div class="col-md-8 col-12">
+													<h4>Tax Payment Details</h4> </div>
+												<div class="col-md-4 col-12"> </div>
+											</div>
+
+											<div class="row1">
+												<div class="col-sm-12 col-12 col-md-12">
+													<!-- dark green menu headers start -->
+													<div class="flex-container py-2">
+														<div class="full-info">
+															<div class="ac-info">
+																<div class="greenbg-input ux-input">
+																	<label for="fromaccount">From Account</label>
+																</div>
+															</div>
+                              								<div class="ac-info" (click)="onAccountSelectType()">
+																<div class="greenbg-input ux-input">
+																	<select required="" class="hide-m" (change)="onFromAccountSelect($event.target.value)">
+                                   										 <option *ngFor="let account of accountList" [value]="account.accountNo">{{account.accoutType}} {{account.sbAccount}} </option>
+																	</select>
+																	<div class="custom-selectbox">
+																		<span *ngIf="accountValue == '' ">Select Account </span>
+																		<span *ngIf="accountValue != '' ">{{accountValue}}</span>
+																		<span class="right-arrow"></span> </div>
+																	<p class="error-message"></p>
+																</div>
+															</div>
+
+															<div class="ac-info">
+																<div class="greenbg-input ux-input">
+																	<p class="info-message2"><i class="hide-d">Total Available Balance</i> <span>₹ {{accBalance | customcurrency}}</span></p>
+																</div>
+															</div>
+															<div class="ac-info hide-m">
+																<button class="refresh-btn" (click)="getAccountBalance(selectedAccount , 'refresh')"><img src="assets/images/svg/refresh.svg" alt="refresh-icon"></button> <span class="refresh-text"> Last Refreshed On {{refreshedTime}}</span> </div>
+														</div>
+													</div>
+													<div class="vspacer10 d-block d-sm-none"></div>
+													<!-- dark green menu headers end -->
+												</div>
+												<div class="col-12 col-md-12">
+                        						<form [formGroup]="challanTaxPaymentForm">
+													<div class="row1">
+														<div class="col-sm-12 col-12 col-md-12">
+															<div class="widget-box5 mb-3">
+																<div class="bg-white1 pad-custom">
+																	<div class="row1">
+																		<div class="col-md-12 col-12">
+																			<div class="row1">
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>Major Head</label>
+																						<input type="text" placeholder="Enter major head" disabled value="(0020)Income tax on Companies(Cooperative)" formControlName="majorHead">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>Minor Head</label>
+																						<input type="text" placeholder="Enter minor head" disabled value="(106) Tax on Distributed Profits" formControlName="minorHead">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>Nature of Payment</label>
+																						<input type="text" placeholder="Enter payment amount" disabled value="94A-Interest other than interest securities" formControlName="naturePayment">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="row1">
+																		<div class="col-md-12 col-12">
+																			<div class="row1">
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>PAN/TAN</label>
+																						<input type="text" placeholder="Enter Pan/Tan number" disabled value="" formControlName="pan">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12" *ngIf="this.DataService.oltasForm == '286' ">
+																					<div class="ux-input ux-disabled">
+																						<label>Nature of PAN</label>
+																						<input type="text" placeholder="Nature of Pan" disabled value="-" formControlName="natureOfPan">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12" *ngIf="this.DataService.oltasForm == '285' || (this.DataService.oltasForm == '280' && this.challanTaxDetails.MinorHead == '800') ">
+																					<div class="ux-input ux-disabled">
+																						<label>Acknowledgement No</label>
+																						<input type="text" placeholder="Enter Pan/Tan number" disabled value="" formControlName="ackNo">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>Full Name</label>
+																						<input type="text" placeholder="Enter Full Name" disabled value="Ketan Jagtap" formControlName="fullName">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>Assessment Year</label>
+																						<input type="text" placeholder="Enter Assessment year" disabled value="FY 2021" formControlName="assestmentYear">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12" *ngIf="this.DataService.oltasForm == '26QD DEMAND PAYMENT' || this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC DEMAND PAYMENT' " >
+																					<div class="ux-input ux-disabled">
+																						<label>ZAOCODE</label>
+																						<input type="text" placeholder="Enter ZAOCODE" disabled formControlName="zaocode">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12" *ngIf="this.DataService.oltasForm == '26QD DEMAND PAYMENT' || this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC DEMAND PAYMENT' ">
+																					<div class="ux-input ux-disabled">
+																						<label>Valid</label>
+																						<input type="text" placeholder="Enter Valid" formControlName="valid">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12" *ngIf="this.DataService.oltasForm == '26QD DEMAND PAYMENT' || this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC DEMAND PAYMENT' " >
+																					<div class="ux-input ux-disabled">
+																						<label>Financial Year</label>
+																						<input type="text" placeholder="Enter Financial year" disabled  formControlName="financialYear">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12" *ngIf="this.DataService.oltasForm == '26QD DEMAND PAYMENT' || this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC DEMAND PAYMENT' " >
+																					<div class="ux-input ux-disabled">
+																						<label>Date Of Payment</label>
+																						<input type="text" placeholder="Enter Date Of Payment" disabled formControlName="dateOfPayemnt">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+
+																			</div>
+																		</div>
+																	</div>
+																	<div class="row1">
+																		<div class="col-md-12 col-12">
+																			<div class="row1">
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>Address Line 1</label>
+																						<input type="text" placeholder="Enter Address" disabled value="Content" formControlName="address1">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>Address Line 2</label>
+																						<input type="text" placeholder="Enter Address" disabled value="Content" formControlName="address2">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+                                        										<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>Address Line 3</label>
+																						<input type="text" placeholder="Enter Address" disabled value="Content" formControlName="address3">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+                                        										<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>Address Line 4</label>
+																						<input type="text" placeholder="Enter Address" disabled value="Content" formControlName="address4">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+
+                                        										<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>Address Line 5</label>
+																						<input type="text" placeholder="Enter Address" disabled value="Content" formControlName="address5">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>State</label>
+																						<!-- <select formControlName="state">
+																							<option value="">Select State</option>
+																							<option value="goa">Goa</option>
+																						</select> -->
+                                            									<input type="text" placeholder="Enter State" disabled value="Content" formControlName="state">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="row1">
+																		<div class="col-md-12 col-12">
+																			<div class="row1">
+																				<!-- <div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>City</label>
+																						<select formControlName="city">
+																							<option value="">Select City</option>
+																							<option value="mumbai">Mumbai</option>
+																						</select>
+																						<p class="error-message"></p>
+																					</div>
+																				</div> -->
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>PIN</label>
+																						<input type="text" placeholder="Enter PIN" disabled value="" formControlName="pin">
+																						<p class="error-message"></p>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="row1">
+																		<div class="col-md-12 col-12">
+																			<div class="row1">
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12" >
+																					<div class="ux-input" [ngClass]="this.DataService.oltasForm == '285' || this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC' || this.DataService.oltasForm == '26QB'  ? 'ux-disabled' : '' ">
+																						<label>Income Tax</label>
+																						<input type="text" placeholder="Enter Tax" value="" [readonly]="this.DataService.oltasForm == '285' || this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC' || this.DataService.oltasForm == '26QB' "  formControlName="incomeTax" limit-to="12" appTwodigitdecimalnumber inputmode="decimal" class="amount-input" placeholder="₹ 0" (blur)="formatCurrency($event.target.value,'incomeTax')" data-a-sign="Rs." (input)="OnInput($event.target.value,challanTaxPaymentForm,'incomeTax')" >  <!--(focus)="focusAmount(incomeTaxModel,'incomeTax')"-->
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input" [ngClass]="this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC' || this.DataService.oltasForm == '26QB'  ? 'ux-disabled' : '' " >
+																						<label>Surcharge</label>
+																						<input type="text" placeholder="Enter Surcharge" value="" [readonly]="this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC' || this.DataService.oltasForm == '26QB' "  formControlName="surcharge" limit-to="12" appTwodigitdecimalnumber inputmode="decimal" class="amount-input" placeholder="₹ 0" (blur)="formatCurrency($event.target.value,'surcharge')" data-a-sign="Rs." (input)="OnInput($event.target.value,challanTaxPaymentForm,'surcharge')"  >  <!--(focus)="focusAmount(surchargeModel,'surcharge')" [(ngModel)]="surchargeModel"-->
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input" [ngClass]="this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC' || this.DataService.oltasForm == '26QB'  ? 'ux-disabled' : '' " >
+																						<label>Education cess</label>
+																						<input type="text" placeholder="Enter Education cess" value="" [readonly]="this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC' || this.DataService.oltasForm == '26QB' "  formControlName="educationCess" limit-to="12" appTwodigitdecimalnumber inputmode="decimal" class="amount-input" placeholder="₹ 0" (blur)="formatCurrency($event.target.value,'educationCess')" data-a-sign="Rs." (input)="OnInput($event.target.value,challanTaxPaymentForm,'educationCess')"  > <!--(focus)="focusAmount(educationCessModel,'educationCess')" [(ngModel)]="educationCessModel"-->
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="row1">
+																		<div class="col-md-12 col-12">
+																			<div class="row1">
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input" [ngClass]="this.DataService.oltasForm == '285' || this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC' || this.DataService.oltasForm == '26QB'  ? 'ux-disabled' : '' ">
+																						<label>Interest</label>
+																						<input type="text"
+																							 placeholder="Enter Interest" value="" [readonly]="this.DataService.oltasForm == '285' || this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC' || this.DataService.oltasForm == '26QB' " formControlName="interest" limit-to="12" appTwodigitdecimalnumber inputmode="decimal" class="amount-input" placeholder="₹ 0" (blur)="formatCurrency($event.target.value,'interest')" data-a-sign="Rs." (input)="OnInput($event.target.value,challanTaxPaymentForm,'interest')" > <!-- (focus)="focusAmount(interestModel,'interest')" [(ngModel)]="interestModel"-->
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input" [ngClass]="this.DataService.oltasForm == '285' || this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC' || this.DataService.oltasForm == '26QB'  ? 'ux-disabled' : '' ">
+																						<label>Penalty </label>
+																						<input type="text"
+																							placeholder="Enter Penalty" value="" [readonly]="this.DataService.oltasForm == '285' || this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC' || this.DataService.oltasForm == '26QB' " formControlName="penalty" limit-to="12" appTwodigitdecimalnumber inputmode="decimal" class="amount-input" placeholder="₹ 0" (blur)="formatCurrency($event.target.value,'penalty')" data-a-sign="Rs." (input)="OnInput($event.target.value,challanTaxPaymentForm,'penalty')" >  <!--(focus)="focusAmount(penaltyModel,'penalty')" [(ngModel)]="penaltyModel"-->
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12">
+																					<div class="ux-input" [ngClass]="this.DataService.oltasForm == '285' || this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC' || this.DataService.oltasForm == '26QB'  ? 'ux-disabled' : '' ">
+																						<label>Other</label>
+																						<input type="text" [readonly]="this.DataService.oltasForm == '285' || this.DataService.oltasForm == '26QD' || this.DataService.oltasForm == '26QC' || this.DataService.oltasForm == '26QB' "
+																							placeholder="Enter Other" value="" formControlName="other" limit-to="12" appTwodigitdecimalnumber inputmode="decimal" class="amount-input" placeholder="₹ 0" (blur)="formatCurrency($event.target.value,'other')" data-a-sign="Rs." (input)="OnInput($event.target.value,challanTaxPaymentForm,'other')" > <!--(focus)="focusAmount(otherModel,'other')" [(ngModel)]="otherModel"-->
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="row1">
+																		<div class="col-md-12 col-12">
+																			<div class="row1">
+																				<div class="col-md-6 col-lg-4 col-xl-4 col-12 ">
+																					<div class="ux-input mb-0 ux-disabled">
+																						<label>Total Amount</label>
+																						<input type="text" placeholder="Enter Amount" value="" class="mb-0" formControlName="totalAmount" disabled>
+																						<p class="error-message" *ngIf="validTaxAmount">Please enter tax amount to proceed</p>
+																					</div>
+																					<small class="info-message" *ngIf="amountInWordSB != ''" style="text-align: right;">{{amountInWordSB}}</small>
+																				</div>
+																				<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																					<div class="ux-input">
+																						<label>Remarks</label>
+																						<input type="text" placeholder="Enter Remark" value="" formControlName="remark">
+																						<p class="error-message" *ngIf="challanTaxPaymentForm.controls['remark'].hasError('required') && (challanTaxPaymentForm.controls['remark'].dirty || challanTaxPaymentForm.controls['remark'].touched)"> This field is required </p>
+																					</div>
+																				</div>
+																				<div class="col-md-6 col-lg-6 col-xl-4 col-12">
+																					<div class="ux-input ux-disabled">
+																						<label>Date</label>
+																						<input type="text" formControlName="dob" disabled>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-md-12">
+															<ul class="bottom-footer1">
+																<li>
+																	<div class="btn-div">
+																		<button class=" ux-button secondary sm-mob" (click)="onCancel()">Cancel</button>
+																	</div>
+																	<div class="btn-div">
+																		<button class=" ux-button primary sm-mob" (click)="challanTaxPaymentSubmit()">Proceed</button>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+                        						</form>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<!-- Greencard2 End here -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--.right-col-container-->
+	</div>
+	<!--.right-main-column-->
+</div>
+<!-- main -->
+<!-- Select Accounts Popup Start-->
+<div class="popup-bottom sel-account">
+	<div class="row1">
+		<div class="col-10">
+			<h4>Select From Account</h4> </div>
+		<div class="col-2">
+			<button class="ux-button-icon close-btn" (click)="closePopup()"> <img src="assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall"> </button>
+		</div>
+	</div>
+	<div class="row1">
+		<div class="col-12">
+			<div class="row1">
+                <div class="col-12 col-md-12" *ngFor="let account of accountList; let i = index" (click)="getToAccValue(account.accoutType,account.accountNo )">
+                    <div class="ux-selection mar-custom">
+                        <label class="ux-selection2">{{account.accoutType}} : {{account.accountNo}}
+                            <input type="radio"  [value]="account.accountNo" name="upi-account"> <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+				<!-- <div class="col-12 col-md-12">
+					<div class="ux-selection mar-custom">
+						<label class="ux-selection2">Saving Account: XXXX XXX 968
+							<input type="radio" value=" XXXX XXX 968" name="upi-account"> <span class="checkmark"></span> </label>
+					</div>
+				</div>
+				<div class="col-12 col-md-12">
+					<div class="ux-selection mar-custom">
+						<label class="ux-selection2">Saving Account: XXXX XXX 969
+							<input type="radio" value=" XXXX XXX 969" name="upi-account"> <span class="checkmark"></span> </label>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<div class="row mt-2">
+		<div class="col-12 text-center">
+			<button class="ux-button primary submit-btn2" (click)="closePopup()" >Submit</button>
+		</div>
+	</div>
+</div>
+<!-- Select Accounts Popup End-->

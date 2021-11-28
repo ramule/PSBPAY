@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta charset="UTF-8">
+
+    <title>Corporate Banking Registration</title>
+
+    <link href="../css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/lib/owl.carousel.min.css" rel="stylesheet">
+    <link href="../css/lib/jquery-ui.min.css" rel="stylesheet">
+    <link href="../css/lib/datatables.min.css" rel="stylesheet">
+    <link href="../css/lib/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="ios-nav-overlay"></div>
+
+    <div class="prelogin-page">
+
+        <!-- header section Start -->
+
+        <header class="global-header">
+            <div class="desk-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-2 col-2 d-none d-md-block d-lg-block d-xl-block">
+                            <ul class="headerlist">
+                                <li>
+                                    <a href="#"> <img src="../assets/images/svg/home1.svg" alt="home-icon"> <em>Home</em></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="brand-heading text-center m-auto">
+                              <span class="logo-img2">
+                                <img src="../assets/images/svg/final-logo.svg" alt="psb-logo">
+                            </span>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-2 col-2 d-none d-md-block d-lg-block d-xl-block">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>  
+
+        <!-- header section End -->
+
+
+        <div class="registration-steps ">
+            <div class="row1">
+                <div class="col-12 position-static">
+                  <div class="inner-header">
+                        <div class="registration-container">
+                            <h4>Corporate Banking Registration</h4>
+                             <a class="close-registration">
+                              <img (click)="mobPrevclick('cross')" src="../assets/images/svg/close-w.svg">
+                           </a>
+                        </div>
+                    </div>
+
+                    <div class="registrationsteps-block custom-pad registration-container">
+                        <div class="row1">
+                            <div class="background-block" style="background-image: url(../assets/images/banner/registration-banner1.png);"> </div>
+                            <div class="middle-block">
+                                <div class="pageHeader">
+                                    <h4>Help us with below details</h4>
+                                    <h6>Please enter below details</h6>
+                                </div>
+                               <div class="row1">
+                                  <div class="col-12 col-md-12 col-xl-12 col-lg-12">
+                                      <div class="ux-input">
+                                          <label for="customerId">Customer ID</label>
+                                          <input type="text" name="customerId" placeholder="Enter Customer ID">
+                                          <p class="error-message"> </p>
+                                      </div>
+                                  </div>
+                                  <div class="col-12 col-md-12 col-xl-12 col-lg-12">
+                                    <div class="ux-input">
+                                        <label for="accountNumber">Account Number</label>
+                                        <input type="text" name="accountNumber" placeholder="Enter Account Number">
+                                        <p class="error-message"> </p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-12 col-xl-12 col-lg-12">
+                                  <div class="ux-input">
+                                      <label for="mobileNumber">Mobile Number</label>
+                                      <input type="text" name="mobileNumber" placeholder="Enter Mobile Number">
+                                      <p class="error-message"> </p>
+                                  </div>
+                              </div>
+                             </div>
+                             <div class="row1">
+                                <div class="col-12 position-static">
+                                    <div class="text-center button-block">
+                                        <button class="otp-btn ux-button primary">Continue</button>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+<!-- Footer Code Starts -->
+        <footer>
+          <div class="global-footer full-footer">
+              <div class="in-glfooter">
+                  <div class="container-fluid">
+                      <div class="row">
+                          <div class="col-4 col-xl-6 col-lg-6 col-md-6 col-sm-4">
+                              <div class="glfooter-content">
+                                  <div class="glfooter-box">
+                                      <div class="glcopyright-text">
+                                          <em>Powered by</em> <img src="../assets/images/kiya-logo.png">
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-8 col-xl-6 col-lg-6 col-md-6 col-sm-8">
+                              <div class="glfooter-content">
+                                  <div class="glfooter-box">
+                                      <div class="glcopyright-text1">
+                                          <em>Copyright © 2020 Infrasoft Technologies Ltd. All rights reserved.</em>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </footer>
+<!-- Footer Code Ends -->
+  
+    </div>
+    <!-- .prelogin-page -->
+
+
+
+    <!-- OTP Popup Start -->
+
+    <div class="popup-bottom md-popup otp-popup">
+      <div class="row1">
+        <div class="col-10">
+            <h4 class="text-left">OTP Verification</h4>
+        </div>
+        <div class="col-2">
+            <button class="ux-button-icon close-btn">
+                <img src="../assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall">
+            </button>
+        </div>
+    </div>
+      <div class="row1">
+          <div class="col-12 col-md-8 col-lg-8 col-xl-8 m-auto">
+              <div class="mob-icon">
+                  <img src="../assets/images/icons/mobile.svg" alt="mobile-icon">
+              </div>
+               <h6 class="text-center mar-tb">OTP sent on your mobile number ending with ********9708 </h6>
+          </div>
+      </div>
+
+      <div class="row1">
+          <div class="col-12 col-md-8 col-lg-8 col-xl-8  m-auto">
+              <div class="row1">
+                <div class="col-12 col-md-12 col-xl-12 col-lg-12">
+                  <div class="ux-input password1 mb-1">
+                      <label for="mobileOtp text-center">Mobile OTP</label>
+                   </div>
+                </div>
+                  <div class="col-12">
+                      <div class="row4">
+                          <div class="col-sm-2 col-2 col-md-2">
+                              <div class="ux-input password1 mb-1">
+                                  <input id="mobile1" type="password" maxlength="1" placeholder="●" onkeyup="onKeyUpEventforAll(1, event ,'mobile' )" onfocus="onFocusEventAll(1,'mobile')">
+                              </div>
+                          </div>
+                          <div class="col-sm-2 col-2 col-md-2">
+                              <div class="ux-input password1 mb-1">
+                                  <input id="mobile2" type="password" maxlength="1" placeholder="●" onkeyup="onKeyUpEventforAll(2, event,'mobile')" onfocus="onFocusEventAll(2,'mobile')">
+                              </div>
+                          </div>
+                          <div class="col-sm-2 col-2 col-md-2">
+                              <div class="ux-input password1 mb-1">
+                                  <input id="mobile3" type="password" maxlength="1" placeholder="●" onkeyup="onKeyUpEventforAll(3, event,'mobile')" onfocus="onFocusEventAll(3,'mobile')">
+                              </div>
+                          </div>
+                          <div class="col-sm-2 col-2 col-md-2">
+                              <div class="ux-input password1 mb-1">
+                                  <input id="mobile4" type="password" maxlength="1" placeholder="●" onkeyup="onKeyUpEventforAll(4, event,'mobile')" onfocus="onFocusEventAll(4 ,'mobile')">
+                              </div>
+                          </div>
+                          <div class="col-sm-2 col-2 col-md-2">
+                              <div class="ux-input password1  mb-1">
+                                  <input id="mobile5" type="password" maxlength="1" placeholder="●" onkeyup="onKeyUpEventforAll(5, event,'mobile')" onfocus="onFocusEventAll(5 ,'mobile')">
+                              </div>
+                          </div>
+                          <div class="col-sm-2 col-2 col-md-2">
+                              <div class="ux-input password1 mb-1">
+                                  <input id="mobile6" type="password" maxlength="1" placeholder="●" onkeyup="onKeyUpEventforAll(6, event,'mobile')" onfocus="onFocusEventAll(6,'mobile')">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row1">
+                          <div class="col-12">
+                              <div class="ux-input password1 mt-0 mb-0">
+                                  <p class="error-message"></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row4">
+                          <div class="col-6 col-md-6">
+                              <div class="text-left">
+                                  <p class="text-left">
+                                      <span class="success-text">00.20</span>
+                                  </p>
+                              </div>
+                          </div>
+                          <div class="col-6 col-md-6">
+                              <div class="text-right">
+                                  <button class="ux-linkbutton default-underline mt-3">Resend</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row1 mt-2">
+          <div class="col-12 col-md-8 col-lg-8 col-xl-8  m-auto">
+              <div class="row1">
+                  <!-- <div class="col-6 text-center">
+                      <button class="ux-button secondary sm-mob close-btn" onclick="window.location.href ='#'">Cancel</button>
+                  </div> -->
+                  <div class="col-12 text-center">
+                      <button class="ux-button primary otp-submit" onclick="window.location.href ='corporate-banking-registration2.html'">Continue</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- OTP Popup End-->
+
+  <script src="../js/lib/jquery.min.js"></script>
+  <script src="../js/lib/bootstrap.min.js"></script>
+  <script src="../js/lib/jquery-ui.min.js"></script>
+  <script src="../js/lib/owl.carousel.min.js"></script>
+  <script src="../js/lib/popper.min.js"></script>
+  <script src="../js/lib/jquery.mousewheel.min.js"></script>
+  <script src="../js/lib/jquery.mCustomScrollbar.js"></script>
+  <script src="../js/lib/datatables.min.js"></script>
+  <script src="../js/common.js"></script>
+
+    <script>
+        
+        $('body').on('click', 'button.otp-btn', function() {
+            console.log('working!')
+            if (!$('div.popup-bottom.otp-popup').hasClass('popup-active')) {
+                $('div.popup-bottom.otp-popup').addClass('popup-active');
+                $('div.ios-nav-overlay').fadeIn(400);
+            } else {
+                $('div.popup-bottom.otp-popup').removeClass('popup-active');
+                $('div.ios-nav-overlay').fadeOut(400);
+            }
+        });
+
+        $('body').on('click', 'button.close-btn', function() {
+            $('div.popup-bottom.otp-popup').removeClass('popup-active');
+            $('div.ios-nav-overlay').fadeOut(400);
+        });
+    </script>
+
+</body>
+
+</html>

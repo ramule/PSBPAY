@@ -1,0 +1,70 @@
+<div class="prelogin-page login-page direct-tax-login">
+	<div class="full-container  halfBackground forLogin">
+		<div class="login-container">
+			<div class="central-box">
+				<div class="loginform-container">
+					<div class="login-form">
+						<div class="login-heading"> </div>
+						<div class="vspacer20"></div>
+						<div class="login-heading">
+							<h3>Make a Payment</h3> </div>
+						<div class="row1 mt-3">
+							<div class="col-12">
+								<form [formGroup]="aggreePaymentForm">
+									<div class="row1">
+										<div class="col-12">
+											<div class="ux-input ux-disabled">
+												<label>Pay To</label>
+												<input type="text" placeholder="Enter Pay To" required [value]="payTo" disabled/>
+												<p class="error-message"></p>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="ux-input ux-disabled">
+												<label>Payment Amount</label>
+												<input type="text" placeholder="Enter Payment Amount" required [value]="amount" disabled/>
+												<p class="error-message"></p>
+											</div>
+										</div>
+										<div class="col-12" *ngIf="!DataService.isReceivedAccMatched" >
+											<div class="ux-input">
+												<label for="debitaccount">Debit Account</label>
+												<select formControlName="debitAccount" (change)="onAccountChange($event.target.value)">
+													<option value="">Select</option>
+													<option *ngFor="let account of accountList" [value]="account.accountNo">{{account.sbAccount}}</option>
+												</select>
+												<p class="error-message" *ngIf="aggreePaymentForm.controls['debitAccount'].hasError('required') && (aggreePaymentForm.controls['debitAccount'].dirty || aggreePaymentForm.controls['debitAccount'].touched)">Please select Debit Account</p>
+											</div>
+										</div>
+										<div class="col-12" *ngIf="DataService.isReceivedAccMatched" >
+											<div class="ux-input ux-disabled">
+												<label for="debitaccount">Debit Account</label>
+												<input type="text" formControlName="debitAccount" disabled>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="ux-input">
+												<label>Payment Remarks</label>
+												<input type="text" name="paymentRemarks" placeholder="Enter Remarks" limit-to="100" formControlName="remarks">
+												<p class="error-message" *ngIf="aggreePaymentForm.controls['remarks'].hasError('required') && (aggreePaymentForm.controls['remarks'].dirty || aggreePaymentForm.controls['remarks'].touched)">Please enter remarks</p>
+											</div>
+										</div>
+									</div>
+									<div class="vspacer20"></div>
+									<div class="row1">
+										<div class="col-6 col-md-6 text-center">
+											<button role="button" class="ux-button secondary" type="button" (click)="cancelPayment()">Cancel Payment</button>
+										</div>
+										<div class="col-6 col-md-6 text-center">
+											<button role="button" class="ux-button primary" type="button" (click)="aggreePaymentSubmit()">Pay</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
